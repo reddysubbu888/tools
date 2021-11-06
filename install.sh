@@ -1,8 +1,27 @@
 #!/usr/bin/bash
-apt-get update -y
-apt-get full-upgrade -y
+apt-get -y update
+apt-get -y upgrade
+apt-get install -y libcurl4-openssl-dev
+apt-get install -y libssl-dev
+apt-get install -y jq
+apt-get install -y ruby-full
+apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+apt-get install -y build-essential libssl-dev libffi-dev python-dev
+apt-get install -y python-setuptools
+apt-get install -y libldns-dev
+apt-get install -y python3-pip
+apt-get install -y python-pip
+apt-get install -y python-dnspython
+apt-get install -y git
+apt-get install -y rename
+apt-get install -y xargs
 apt install python-pip
 apt install python3-pip
+echo "++installing go lang++"
+wget https://golang.org/dl/go1.17.3.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz
+cp /usr/local/go/bin/go /usr/bin
+echo "+++installing go tools++"
 go get -u github.com/tomnomnom/assetfinder
 go get -v github.com/OWASP/Amass/v3/…
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
@@ -37,7 +56,7 @@ Cd $path
 wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux
 chmod +x findomain-linux
 ./findomain-linux
-cp finddomain-l* /usr/bin
+cp findomain-l* /usr/bin
 
 git clone --recursive https://github.com/screetsec/Sudomy.git
 cd sudomy
